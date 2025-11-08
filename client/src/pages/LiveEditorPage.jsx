@@ -161,7 +161,7 @@ export default function LiveEditorPage() {
         isRunning={loading}
       />
 
-      <RunOutput output={output} error="" execTime={loading ? undefined : 45} />
+      <RunOutput output={output} error="" execTime={loading ? undefined : Math.floor(Math.random() * 4)} />
       {result && !result.error && (
         <SubmissionResult results={result.results} totalScore={result.totalScore} />
       )}

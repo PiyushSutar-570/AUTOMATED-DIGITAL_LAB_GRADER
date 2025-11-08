@@ -14,11 +14,19 @@ export default function EditorPanel({
     if (!code?.trim()) return;
     await onRun({ code, language, stdin });
   };
+  const handleOpenPreview = () => {
+    localStorage.setItem("previewCode", code);
+    localStorage.setItem("previewLang", language);
+    window.open("/preview.html", "_blank");
+  };
 
   return (
     <div className="card text-white">
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
         <h2 className="text-lg font-semibold">Code Editor</h2>
+        <button onClick={handleOpenPreview} className="btn">
+          🌐 Open in HTML Page
+        </button>
         <button
           onClick={handleRun}
           disabled={isRunning}
