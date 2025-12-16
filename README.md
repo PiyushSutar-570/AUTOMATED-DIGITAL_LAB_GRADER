@@ -72,6 +72,7 @@ Generates:
 git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
 
 # Backend setup
+```bash
 cd server
 npm install
 npm run dev
