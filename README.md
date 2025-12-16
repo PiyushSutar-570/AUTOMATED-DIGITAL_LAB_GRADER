@@ -87,6 +87,7 @@ JWT_SECRET=your_secret_key
 
 👤 Author
 Piyush Sutar
+
 B.Tech CSE (AI & ML)
+
 Full-Stack Developer | Strong DSA & System Design
-🔗 GitHub
