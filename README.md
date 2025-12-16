@@ -86,78 +86,15 @@ File type and size validation
 
 Secure production cookie settings
 
-📂 Project Structure
-.
-├── controllers/
-│   ├── authController.js
-│   └── gradingController.js
-├── models/
-│   └── userModel.js
-├── routes/
-│   ├── authRoutes.js
-│   └── labRoutes.js
-├── middleware/
-│   └── requireRole.js
-├── uploads/
-├── config/
-├── server.js
-└── README.md
-
-🧪 Scalability Considerations
-
-Handles concurrent submissions from multiple students
-
-Stateless authentication using JWT
-
-Modular backend structure
-
-Optimized file upload handling
-
-Can be extended with cloud storage (AWS S3 / GCP)
 
 📝 Installation & Setup
 git clone https://github.com/your-username/automated-digital-lab-grading-system.git
 cd automated-digital-lab-grading-system
 npm install
 
-Environment Variables
-
-Create a .env file:
-
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-NODE_ENV=development
-
-Run the project
-npm run dev
-
-📈 Future Improvements
-
-Plagiarism detection
-
-AI-based grading support
-
-Dockerization
-
-Cloud file storage
-
 Analytics dashboard for faculty
 
 👨‍💻 Author
-
 Piyush Sutar
 B.Tech CSE (AI & ML)
 Aspiring Full-Stack Developer
-
-⭐ Why this project matters
-
-This project demonstrates:
-
-Real-world backend system design
-
-Secure authentication & authorization
-
-Scalable file handling
-
-Practical application in academic environments
