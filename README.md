@@ -76,15 +76,20 @@ git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
 cd server
 npm install
 npm run dev
+```bash
 
 # Frontend setup
+```bash
 cd client
 npm install
 npm run dev
+```bash
 
 Create a .env file in server/:
+```bash
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
+```bash
 
 👤 Author
 Piyush Sutar
