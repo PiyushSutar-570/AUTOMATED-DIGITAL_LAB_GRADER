@@ -69,7 +69,7 @@ Generates:
 
 📦 Installation & Setup
 # Clone the repository
-git clone https://github.com/PiyushSutar-570/D3-2K25-SOLUTIONS-DIGITAL_LAB_GRADER.git
+git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
 
 # Backend setup
 cd server
