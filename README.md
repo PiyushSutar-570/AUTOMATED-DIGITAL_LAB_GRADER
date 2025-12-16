@@ -71,29 +71,22 @@ Generates:
 # Clone the repository
 git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
 
-# Backend setup
+## Backend setup
 ```bash
 cd server
 npm install
 npm run dev
-```bash
 
-# Frontend setup
-```bash
+Frontend setup
 cd client
 npm install
 npm run dev
-```bash
 
 Create a .env file in server/:
-```bash
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
-```bash
 
-👤 Author
+Author
 Piyush Sutar
-
 B.Tech CSE (AI & ML)
-
 Full-Stack Developer | Strong DSA & System Design
