@@ -11,60 +11,58 @@ Digital TA solves this by acting as an objective, real-time code judge, providin
 🎯 Key Features
 👨‍🏫 Instructor Dashboard
 
-Create programming assignments with title, deadline, and language support
-
-Upload:
-
+1.Create programming assignments with title, deadline, and language support
+2.Upload:
 📄 Problem statement (PDF)
-
 📥 Input test cases (input.txt)
-
 📤 Expected outputs (output.txt)
-
-Automatic test-case generation and scoring
-
-View class-level analytics and leaderboards
+3.Automatic test-case generation and scoring
+4.View class-level analytics and leaderboards
 
 🎓 Student Dashboard
 
-View active, completed, and closed assignments
-
-Access problem PDFs directly
-
-Launch assignments in an in-browser live code editor
-
-Submit solutions and receive instant, detailed feedback
+1.View active, completed, and closed assignments
+2.Access problem PDFs directly
+3.Launch assignments in an in-browser live code editor
+4.Submit solutions and receive instant, detailed feedback
 
 💻 Live Coding Editor
 
-Write and test code directly in the browser (Monaco Editor)
-
-Supports Python, C++, and JavaScript
-
-Run sample inputs before final submission
-
-Execute code securely against all test cases
+1.Write and test code directly in the browser (Monaco Editor)
+2.Supports Python, C++, and JavaScript
+3.Run sample inputs before final submission
+4.Execute code securely against all test cases
 
 🧪 Automated Grading Engine
 
-Executes student code using Piston API
-
-Compares output against expected results
+1.Executes student code using Piston API
+2.Compares output against expected results
 
 Generates:
-
-Pass/fail per test case
-
-Total score
-
-Submission status
+1.Pass/fail per test case
+2.Total score
+3.Submission status
 
 📊 Analytics & Leaderboard
 
-Assignment-wise performance breakdown
+1.Assignment-wise performance breakdown
+2.Top-scoring students per assignment
+3.Average scores and submission trends
+4.Motivational leaderboard (optional anonymization)
 
-Top-scoring students per assignment
+🛠 Tech Stack
 
-Average scores and submission trends
+#Frontend
+1.React.js
+2.Monaco Code Editor
+3.Tailwind CSS
 
-Motivational leaderboard (optional anonymization)
+#Backend
+1.Node.js
+2.Express.js
+3.MongoDB
+4.JWT Authentication
+5.Code Execution
+6.Piston API (Sandboxed multi-language execution)
+7.File Handling
+8.Multer (PDF & test case uploads)
