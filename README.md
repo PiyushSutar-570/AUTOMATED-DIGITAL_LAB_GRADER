@@ -66,3 +66,27 @@ Generates:
 6.Piston API (Sandboxed multi-language execution)
 7.File Handling
 8.Multer (PDF & test case uploads)
+
+📦 Installation & Setup
+# Clone the repository
+git clone https://github.com/PiyushSutar-570/D3-2K25-SOLUTIONS-DIGITAL_LAB_GRADER.git
+
+# Backend setup
+cd server
+npm install
+npm run dev
+
+# Frontend setup
+cd client
+npm install
+npm run dev
+
+Create a .env file in server/:
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+
+👤 Author
+Piyush Sutar
+B.Tech CSE (AI & ML)
+Full-Stack Developer | Strong DSA & System Design
+🔗 GitHub
