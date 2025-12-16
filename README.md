@@ -1,100 +1,70 @@
-📘 Automated Digital Lab Grading System
+🚀 Digital TA – Automated Digital Lab Grading System
 
-An end-to-end web application that automates the evaluation and grading of laboratory assignments submitted by students. The system reduces manual effort for instructors, ensures fair grading, and supports scalable digital lab management.
+A full-stack platform that automates programming lab evaluation with real-time code execution, instant feedback, analytics, and leaderboards.
 
-🚀 Features
-👨‍🎓 Student
+📌 Problem Statement
 
-Secure authentication (JWT + cookies)
+Manual grading of programming labs in large university classes is time-consuming, inconsistent, and delays student feedback. Instructors spend more time validating syntax and edge cases than teaching core concepts, while students wait days for results.
 
-Upload lab assignments (PDF / text files)
+Digital TA solves this by acting as an objective, real-time code judge, providing instant evaluation and performance insights for both students and instructors.
 
-View submission status and grades
+🎯 Key Features
+👨‍🏫 Instructor Dashboard
 
-Submission deadline enforcement
+Create programming assignments with title, deadline, and language support
 
-👩‍🏫 Faculty
+Upload:
 
-View student submissions
+📄 Problem statement (PDF)
 
-Automatic evaluation of assignments
+📥 Input test cases (input.txt)
 
-Manual override and feedback support
+📤 Expected outputs (output.txt)
 
-Grade publishing
+Automatic test-case generation and scoring
 
-🛠 Admin
+View class-level analytics and leaderboards
 
-Role-based access control
+🎓 Student Dashboard
 
-User and lab management
+View active, completed, and closed assignments
 
-Secure file handling
+Access problem PDFs directly
 
-⚙️ Tech Stack
-Backend
+Launch assignments in an in-browser live code editor
 
-Node.js
+Submit solutions and receive instant, detailed feedback
 
-Express.js
+💻 Live Coding Editor
 
-MongoDB + Mongoose
+Write and test code directly in the browser (Monaco Editor)
 
-JWT Authentication
+Supports Python, C++, and JavaScript
 
-bcrypt.js
+Run sample inputs before final submission
 
-Multer (file uploads)
+Execute code securely against all test cases
 
-Frontend
+🧪 Automated Grading Engine
 
-React.js
+Executes student code using Piston API
 
-Tailwind CSS
+Compares output against expected results
 
-Axios
+Generates:
 
-Other
+Pass/fail per test case
 
-RESTful APIs
+Total score
 
-Cookie-based authentication
+Submission status
 
-Role-based authorization middleware
+📊 Analytics & Leaderboard
 
-🧠 System Architecture
+Assignment-wise performance breakdown
 
-Students upload lab files via a secure interface
+Top-scoring students per assignment
 
-Files are processed and stored on the server
+Average scores and submission trends
 
-Evaluation logic automatically checks submissions
-
-Grades are generated and stored in the database
-
-Faculty can review and publish results
-
-🔐 Security
-
-Password hashing using bcrypt
-
-HTTP-only cookies for JWT storage
-
-Role-based authorization middleware
-
-File type and size validation
-
-Secure production cookie settings
-
-
-📝 Installation & Setup
-git clone https://github.com/your-username/automated-digital-lab-grading-system.git
-cd automated-digital-lab-grading-system
-npm install
-
-Analytics dashboard for faculty
-
-👨‍💻 Author
-Piyush Sutar
-B.Tech CSE (AI & ML)
-Aspiring Full-Stack Developer
+Motivational leaderboard (optional anonymization)
