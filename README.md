@@ -87,3 +87,8 @@ npm run dev
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
 ```
+
+👤 Author
+Piyush Sutar
+B.Tech CSE (AI & ML)
+Full-Stack Developer | Strong DSA & System Design
