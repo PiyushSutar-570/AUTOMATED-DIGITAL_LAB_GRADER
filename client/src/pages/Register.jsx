@@ -41,7 +41,6 @@ export default function Register() {
             {loading ? "Creating…" : "Sign up"}
           </button>
         </form>
-
         <p className="text-slate-400 text-sm mt-3">
           Already have an account? <Link to="/login" className="text-indigo-300">Log in</Link>
         </p>
