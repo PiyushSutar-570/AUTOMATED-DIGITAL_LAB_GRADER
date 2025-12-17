@@ -5,9 +5,7 @@ import fs from "fs";
 import path from "path";
 import { PATHS, UPLOADS_PUBLIC_BASE } from "../utils/multerConfig.js";
 
-// ================================
-// ✅ Helper: read file safely
-// ================================
+//read safe
 const readFileSafe = (filePath) => {
   try {
     return fs.readFileSync(filePath, "utf8").trim();
@@ -16,14 +14,12 @@ const readFileSafe = (filePath) => {
   }
 };
 
-// =======================================================================================
-// ✅ CREATE ASSIGNMENT (PDF + input.txt + output.txt)
-// =======================================================================================
+//create statement
 export const createAssignment = async (req, res) => {
   try {
     const { title, description, language, deadline } = req.body;
 
-    // ✅ Uploaded files coming from multer
+    // 
     const pdfFile   = req.files?.questionPdf?.[0];
     const inputFile = req.files?.inputFile?.[0];
     const outputFile = req.files?.outputFile?.[0];
@@ -32,16 +28,16 @@ export const createAssignment = async (req, res) => {
       return res.status(400).json({ message: "All 3 files required (PDF, input.txt, output.txt)" });
     }
 
-    // ✅ Build public URLs
+    // Build public URLs
     const questionPdfUrl = `${UPLOADS_PUBLIC_BASE}/pdf/${pdfFile.filename}`;
     const inputFileUrl = `${UPLOADS_PUBLIC_BASE}/cases/${inputFile.filename}`;
     const outputFileUrl = `${UPLOADS_PUBLIC_BASE}/cases/${outputFile.filename}`;
 
-    // ✅ Read file contents
+    //Read file contents
     const inputText = readFileSafe(inputFile.path);
     const outputText = readFileSafe(outputFile.path);
 
-    // ✅ Parse test cases
+    // Parse test cases
     // Each line of input → one test case
     // output lines must match input count
     const inputLines = inputText.split("\n").map((l) => l.trim());
@@ -55,7 +51,7 @@ export const createAssignment = async (req, res) => {
 
     const totalCases = inputLines.length;
 
-    // ✅ Create assignment
+    //Create assignment
     const assignment = await Assignment.create({
       title,
       description,
@@ -68,7 +64,7 @@ export const createAssignment = async (req, res) => {
       totalCases,
     });
 
-    // ✅ Save each test case in DB
+    //Save each test case in DB
     const testCases = inputLines.map((inp, i) => ({
       assignment: assignment._id,
       inputText: inp,
@@ -89,9 +85,7 @@ export const createAssignment = async (req, res) => {
   }
 };
 
-// =======================================================================================
-// ✅ GET ALL ASSIGNMENTS
-// =======================================================================================
+// get all asn
 export const getAllAssignments = async (req, res) => {
   try {
     const assignments = await Assignment.find().sort({ createdAt: -1 });
@@ -101,9 +95,7 @@ export const getAllAssignments = async (req, res) => {
   }
 };
 
-// =======================================================================================
-// ✅ GET ASSIGNMENT BY ID
-// =======================================================================================
+//get specific
 export const getAssignmentById = async (req, res) => {
   try {
     const assignment = await Assignment.findById(req.params.id);
@@ -116,9 +108,7 @@ export const getAssignmentById = async (req, res) => {
   }
 };
 
-// =======================================================================================
-// ✅ UPDATE ASSIGNMENT
-// =======================================================================================
+// update
 export const updateAssignment = async (req, res) => {
   try {
     const assignment = await Assignment.findByIdAndUpdate(
@@ -135,26 +125,24 @@ export const updateAssignment = async (req, res) => {
   }
 };
 
-// =======================================================================================
-// ✅ DELETE ASSIGNMENT
-// =======================================================================================
+//delete asn
 export const deleteAssignment = async (req, res) => {
   try {
     const assignment = await Assignment.findById(req.params.id);
     if (!assignment)
       return res.status(404).json({ message: "Assignment not found" });
 
-    // ✅ Remove test cases
+    //Remove test cases
     await TestCase.deleteMany({ assignment: assignment._id });
 
-    // ✅ Remove files from storage
+    //Remove files from storage
     [assignment.questionPdfUrl, assignment.inputFileUrl, assignment.outputFileUrl].forEach(fileUrl => {
       if (!fileUrl) return;
       const actualPath = path.join(PATHS.UPLOAD_ROOT, "..", fileUrl.replace("/uploads/", ""));
       if (fs.existsSync(actualPath)) fs.unlinkSync(actualPath);
     });
 
-    // ✅ Delete assignment
+    //Delete assignment
     await assignment.deleteOne();
 
     res.json({ message: "Assignment deleted successfully" });

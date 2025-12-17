@@ -4,7 +4,6 @@ import User from "../models/userModel.js";
 // 🔐 Middleware to verify JWT tokens
 export const protect = async (req, res, next) => {
   let token;
-
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -30,7 +29,7 @@ export const protect = async (req, res, next) => {
   }
 };
 
-// 🔐 Require specific roles (e.g., "student", "instructor")
+//Require specific roles (e.g., "student", "instructor")
 export const requireRole = (...roles) => (req, res, next) => {
   if (!req.user) return res.status(401).json({ message: "Not authorized" });
   if (!roles.includes(req.user.role)) {

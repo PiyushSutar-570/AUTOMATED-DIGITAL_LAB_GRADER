@@ -46,20 +46,20 @@ const fileFilter = (req, file, cb) => {
   cb(null, true);
 };
 
-// ✅ Limits
+//Limits
 const limits = { fileSize: 10 * 1024 * 1024 }; // 10MB
 
-// ✅ Base upload middleware
+//Base upload middleware
 export const upload = multer({ storage, fileFilter, limits });
 
-// ✅ Assignment-specific upload middleware
+//Assignment-specific upload middleware
 export const uploadAssignmentFiles = upload.fields([
   { name: "questionPdf", maxCount: 1 },
   { name: "inputFile", maxCount: 1 },
   { name: "outputFile", maxCount: 1 },
 ]);
 
-// ✅ Public base url (/uploads...)
+//Public base url (/uploads...)
 export const UPLOADS_PUBLIC_BASE = "/uploads";
 
 // ✅ Export paths

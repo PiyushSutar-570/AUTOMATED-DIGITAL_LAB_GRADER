@@ -56,7 +56,7 @@ export const getAnalytics = async (req, res) => {
       passed,
       avgScore,
       top5,
-      buckets, // optional for charts
+      buckets,
       raw: subs,
     });
   } catch (err) {

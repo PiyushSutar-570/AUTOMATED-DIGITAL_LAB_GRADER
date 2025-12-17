@@ -1,7 +1,7 @@
 import Submission from "../models/submissionModel.js";
 import Assignment from "../models/assignmentModel.js";
 
-// 🧾 Get all submissions
+//Get all submissions
 export const getAllSubmissions = async (req, res) => {
   try {
     const submissions = await Submission.find().populate("assignment");
@@ -11,7 +11,7 @@ export const getAllSubmissions = async (req, res) => {
   }
 };
 
-// 🧠 Submit code for grading
+//Submit code for grading
 export const createSubmission = async (req, res) => {
   try {
     const { assignmentId, code, language, studentName } = req.body;
@@ -37,7 +37,7 @@ export const createSubmission = async (req, res) => {
   }
 };
 
-// 📜 Get submissions by student name
+//Get submissions by student name
 export const getSubmissionsByStudent = async (req, res) => {
   try {
     const submissions = await Submission.find({ studentName: req.params.studentName }).populate("assignment");
