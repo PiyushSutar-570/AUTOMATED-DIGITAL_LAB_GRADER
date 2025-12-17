@@ -2,7 +2,7 @@ export const initSocket = (io) => {
   io.on("connection", (socket) => {
     console.log(`🟢 New client connected: ${socket.id}`);
 
-    // 🧠 When a student updates code in the live editor
+    // 🧠 When a student updates code in the live editor ok 
     socket.on("code_update", (data) => {
       console.log("💻 Code Update:", data);
       // Broadcast code updates to other clients (real-time collaboration)
