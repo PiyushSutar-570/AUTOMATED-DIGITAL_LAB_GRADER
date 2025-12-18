@@ -26,7 +26,16 @@ connectDB();
 
 // Initialize Express app
 const app = express();
-app.use(cors({ origin: ["http://localhost:5173","http://localhost:5000"] }));
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5000",
+    "https://automated-digital-lab-grader-frontend.onrender.com"
+  ],
+  credentials: true
+}));
+
 app.use(express.json()); // Parse JSON bodies
 
 // Create HTTP server for Socket.io
