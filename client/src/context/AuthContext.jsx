@@ -11,7 +11,7 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     if (!token) return;
-    axios.get("http://localhost:5000/api/users/me", {
+    axios.get("https://automated-digital-lab-grader.onrender.com/api/users/me", {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setUser(res.data))
       .catch(() => { setUser(null); setToken(null); localStorage.removeItem("token"); });
@@ -20,7 +20,7 @@ export default function AuthProvider({ children }) {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/users/login", { email, password });
+      const res = await axios.post("https://automated-digital-lab-grader.onrender.com/api/users/login", { email, password });
       localStorage.setItem("token", res.data.token);
       setToken(res.data.token);
       setUser(res.data.user);
