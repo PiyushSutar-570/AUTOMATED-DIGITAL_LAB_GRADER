@@ -20,7 +20,7 @@ const fetchText = async (relativeUrl) => {
   if (!relativeUrl) return "";
   const url = relativeUrl.startsWith("http")
     ? relativeUrl
-    : `http://localhost:5000${relativeUrl}`;
+    : `https://automated-digital-lab-grader.onrender.com${relativeUrl}`;
   const res = await fetch(url);
   return res.ok ? await res.text() : "";
 };
@@ -72,7 +72,7 @@ export default function LiveEditorPage() {
 
     const mapped = LANG_MAP[lang] || { language: lang, version: "*" };
     try {
-      const res = await axios.post("http://localhost:5000/api/execute", {
+      const res = await axios.post("https://automated-digital-lab-grader.onrender.com/api/execute", {
         code: src, language: mapped.language, version: mapped.version, stdin: inText,
       });
       setOutput(res.data.output || "✅ No output.");
@@ -111,7 +111,7 @@ export default function LiveEditorPage() {
             <span className="badge capitalize">{a.language}</span>
             {a.questionPdfUrl && (
               <a
-                href={`http://localhost:5000${a.questionPdfUrl}`}
+                href={`https://automated-digital-lab-grader.onrender.com${a.questionPdfUrl}`}
                 target="_blank" rel="noreferrer"
                 className="text-indigo-300 hover:underline"
               >

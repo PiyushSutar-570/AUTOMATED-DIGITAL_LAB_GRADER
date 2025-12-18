@@ -11,7 +11,7 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/users/register", form);
+      await axios.post("https://automated-digital-lab-grader.onrender.com/api/users/register", form);
       nav("/login");
     } catch (e) {
       alert(e?.response?.data?.message || "Registration failed");

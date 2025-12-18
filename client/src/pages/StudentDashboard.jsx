@@ -24,7 +24,7 @@ export default function StudentDashboard() {
   const [error, setError] = useState("");
 
   // Axios with auth header
-  const api = axios.create({ baseURL: "http://localhost:5000" });
+  const api = axios.create({ baseURL: "https://automated-digital-lab-grader.onrender.com" });
   api.interceptors.request.use((config) => {
     const token = localStorage.getItem("token");
     if (token) config.headers.Authorization = `Bearer ${token}`;
@@ -108,7 +108,7 @@ export default function StudentDashboard() {
                   <td>
                     {a.questionPdfUrl ? (
                       <a
-                        href={`http://localhost:5000${a.questionPdfUrl}`}
+                        href={`https://automated-digital-lab-grader.onrender.com${a.questionPdfUrl}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-indigo-300 hover:underline"

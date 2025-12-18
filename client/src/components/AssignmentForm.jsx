@@ -56,7 +56,7 @@ export default function AssignmentForm() {
       data.append("outputFile", formData.outputFile);
 
       const res = await axios.post(
-        "http://localhost:5000/api/assignments/create",
+        "https://automated-digital-lab-grader.onrender.com/api/assignments/create",
         data,
         {
           headers: {
