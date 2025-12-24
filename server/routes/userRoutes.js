@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 
-// 👤 Authenticated profile (for the logged-in user)
+//Authenticated profile (for the logged-in user)
 router.get("/me", protect, getProfile);
 
 export default router;

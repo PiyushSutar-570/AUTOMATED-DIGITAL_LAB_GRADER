@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 
-// 🔐 Middleware to verify JWT tokens
+// Middleware to verify JWT tokens
 export const protect = async (req, res, next) => {
   let token;
   if (

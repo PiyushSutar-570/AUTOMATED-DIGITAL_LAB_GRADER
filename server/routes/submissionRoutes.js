@@ -6,10 +6,10 @@ import {
 
 const router = express.Router();
 
-// 📤 Create a new submission
+//Create a new submission
 router.post("/submit", createSubmission);
 
-// 📜 Get submissions by student name
+//Get submissions by student name
 router.get("/submit/:studentName", getSubmissionsByStudent);
 
 export default router;

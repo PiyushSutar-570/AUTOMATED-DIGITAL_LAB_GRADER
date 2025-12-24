@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// ✅ Correct ESM dirname/filename handling
+//Correct ESM dirname/filename handling
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -20,7 +20,7 @@ const CASES_DIR = path.join(UPLOAD_ROOT, "cases");
   if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
 });
 
-// ✅ Storage rule
+//Storage rule
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     if (file.fieldname === "questionPdf") cb(null, PDF_DIR);
@@ -33,7 +33,7 @@ const storage = multer.diskStorage({
   },
 });
 
-// ✅ File filter
+//File filter
 const allowed = {
   questionPdf: ["application/pdf"],
   inputFile: ["text/plain", "application/octet-stream"],
@@ -62,5 +62,5 @@ export const uploadAssignmentFiles = upload.fields([
 //Public base url (/uploads...)
 export const UPLOADS_PUBLIC_BASE = "/uploads";
 
-// ✅ Export paths
+//Export paths
 export const PATHS = { UPLOAD_ROOT, PDF_DIR, CASES_DIR };
