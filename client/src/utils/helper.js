@@ -1,7 +1,3 @@
-// ================================
-// 📆 TIME & DATE HELPERS
-// ================================
-
 // Format date-time into readable format
 export const formatDateTime = (dateString) => {
   if (!dateString) return "-";
@@ -25,9 +21,6 @@ export const getTimeRemaining = (deadline) => {
   return `${days}d ${hours}h ${minutes}m left`;
 };
 
-// ================================
-// 🧠 GRADING HELPERS
-// ================================
 
 // Calculate total score based on passed test cases
 export const calculateScore = (results) => {
@@ -49,9 +42,6 @@ export const getGrade = (score, total) => {
   return "F";
 };
 
-// ================================
-// ⚙️ OUTPUT HELPERS
-// ================================
 
 // Compare actual vs expected output (for backend use)
 export const compareOutputs = (expected, actual) => {
@@ -64,9 +54,7 @@ export const formatExecutionTime = (ms) => {
   return `${(ms / 1000).toFixed(2)} s`;
 };
 
-// ================================
-// 🧾 RESULT DISPLAY HELPERS
-// ================================
+
 
 // Simplify long strings (like code snippets)
 export const truncateText = (text, maxLength = 100) => {

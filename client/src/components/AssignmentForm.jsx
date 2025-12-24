@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-
+const url = import.meta.env.VITE_API_URL;
 export default function AssignmentForm() {
   const [formData, setFormData] = useState({
     title: "",
@@ -56,7 +56,7 @@ export default function AssignmentForm() {
       data.append("outputFile", formData.outputFile);
 
       const res = await axios.post(
-        "https://automated-digital-lab-grader.onrender.com/api/assignments/create",
+        `${url}/api/assignments/create`,
         data,
         {
           headers: {

@@ -31,7 +31,7 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5000",
-    "https://automated-digital-lab-grader-frontend.onrender.com"
+    process.env.BACKEND_URL
   ],
   credentials: true
 }));

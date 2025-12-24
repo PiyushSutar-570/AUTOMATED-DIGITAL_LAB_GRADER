@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-
+const url = import.meta.env.VITE_API_URL;
 const AuthContext = createContext(null);
 export const useAuth = () => useContext(AuthContext);
 
@@ -11,7 +11,7 @@ export default function AuthProvider({ children }) {
 
   useEffect(() => {
     if (!token) return;
-    axios.get("https://automated-digital-lab-grader.onrender.com/api/users/me", {
+    axios.get(`${url}/api/users/me`, {
       headers: { Authorization: `Bearer ${token}` },
     }).then(res => setUser(res.data))
       .catch(() => { setUser(null); setToken(null); localStorage.removeItem("token"); });
@@ -20,7 +20,7 @@ export default function AuthProvider({ children }) {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const res = await axios.post("https://automated-digital-lab-grader.onrender.com/api/users/login", { email, password });
+      const res = await axios.post(`${url}/api/users/login`, { email, password });
       localStorage.setItem("token", res.data.token);
       setToken(res.data.token);
       setUser(res.data.user);

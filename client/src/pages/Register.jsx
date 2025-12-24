@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-
+const url = import.meta.env.VITE_API_URL;
 export default function Register() {
   const nav = useNavigate();
   const [form, setForm] = useState({ name:"", email:"", password:"", role:"student" });
@@ -11,7 +11,7 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("https://automated-digital-lab-grader.onrender.com/api/users/register", form);
+      await axios.post(`${url}/api/users/register`, form);
       nav("/login");
     } catch (e) {
       alert(e?.response?.data?.message || "Registration failed");

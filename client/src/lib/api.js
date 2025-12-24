@@ -1,6 +1,6 @@
 import axios from "axios";
-
-const api = axios.create({ baseURL: "https://automated-digital-lab-grader.onrender.com" });
+const url = import.meta.env.VITE_API_URL;
+const api = axios.create({ baseURL: `${url}` });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");

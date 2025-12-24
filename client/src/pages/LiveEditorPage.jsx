@@ -7,7 +7,7 @@ import api from "../utils/api";
 import EditorPanel from "../components/EditorPanel";
 import RunOutput from "../components/RunOutput";
 import SubmissionResult from "../components/SubmissionResult";
-
+const urll = import.meta.env.VITE_API_URL;
 const LANG_MAP = {
   python3:    { language: "python",     version: "*" },
   "g++":      { language: "cpp",        version: "*" },
@@ -15,12 +15,11 @@ const LANG_MAP = {
   python:     { language: "python",     version: "*" },
   cpp:        { language: "cpp",        version: "*" },
 };
-
 const fetchText = async (relativeUrl) => {
   if (!relativeUrl) return "";
   const url = relativeUrl.startsWith("http")
     ? relativeUrl
-    : `https://automated-digital-lab-grader.onrender.com${relativeUrl}`;
+    : `${urll}${relativeUrl}`;
   const res = await fetch(url);
   return res.ok ? await res.text() : "";
 };
@@ -72,7 +71,7 @@ export default function LiveEditorPage() {
 
     const mapped = LANG_MAP[lang] || { language: lang, version: "*" };
     try {
-      const res = await axios.post("https://automated-digital-lab-grader.onrender.com/api/execute", {
+      const res = await axios.post(`${urll}/api/execute`, {
         code: src, language: mapped.language, version: mapped.version, stdin: inText,
       });
       setOutput(res.data.output || "✅ No output.");
@@ -111,7 +110,7 @@ export default function LiveEditorPage() {
             <span className="badge capitalize">{a.language}</span>
             {a.questionPdfUrl && (
               <a
-                href={`https://automated-digital-lab-grader.onrender.com${a.questionPdfUrl}`}
+                href={`${urll}${a.questionPdfUrl}`}
                 target="_blank" rel="noreferrer"
                 className="text-indigo-300 hover:underline"
               >

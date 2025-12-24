@@ -1,9 +1,9 @@
-// client/src/pages/InstructorDashboard.jsx
+
 import React, { useEffect, useState } from "react";
 import AssignmentForm from "../components/AssignmentForm";
 import AnalyticsDashboard from "../components/AnalyticsDashboard";
 import Leaderboard from "../components/LeaderBoard";
-import { fetchAssignments } from "../utils/api";
+import { fetchAssignments } from "../utils/api.js";
 
 export default function InstructorDashboard() {
   const [assignments, setAssignments] = useState([]);
@@ -14,6 +14,7 @@ export default function InstructorDashboard() {
       try {
         const data = await fetchAssignments();
         setAssignments(data || []);
+        console.log("assignments fetched !");
       } catch (err) {
         console.error("Error loading assignments:", err);
       }

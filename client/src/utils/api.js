@@ -1,8 +1,8 @@
-// client/src/utils/api.js
-import axios from "axios";
 
+import axios from "axios";
+const url = import.meta.env.VITE_API_URL;
 const API = axios.create({
-  baseURL: "https://automated-digital-lab-grader.onrender.com/api",
+  baseURL: `${url}`,
 });
 
 // Attach token automatically
@@ -14,17 +14,17 @@ API.interceptors.request.use((config) => {
 
 // === Instructor APIs ===
 export const createAssignment = async (assignmentData) => {
-  const res = await API.post("/assignments/create", assignmentData);
+  const res = await API.post("api/assignments/create", assignmentData);
   return res.data;
 };
 
 export const fetchAssignments = async () => {
-  const res = await API.get("/assignments/get");
+  const res = await API.get("api/assignments/get");
   return res.data;
 };
 
 export const uploadTestCases = async (formData) => {
-  const res = await API.post("/assignments/upload", formData, {
+  const res = await API.post("api/assignments/upload", formData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
   return res.data;
@@ -32,33 +32,33 @@ export const uploadTestCases = async (formData) => {
 
 // Analytics & Leaderboard
 export const fetchLeaderboard = async (assignmentId) => {
-  const res = await API.get(`/analytics/leaderboard/${assignmentId}`);
+  const res = await API.get(`api/analytics/leaderboard/${assignmentId}`);
   return res.data;
 };
 
 export const fetchAnalytics = async (assignmentId) => {
-  const res = await API.get(`/analytics/analytics/${assignmentId}`);
+  const res = await API.get(`api/analytics/analytics/${assignmentId}`);
   return res.data;
 };
 
 // === Student APIs ===
 export const getAllAssignments = async () => {
-  const res = await API.get("/assignments/get");
+  const res = await API.get("api/assignments/get");
   return res.data;
 };
 
 export const executeCode = async (code, language) => {
-  const res = await API.post("/execute", { code, language });
+  const res = await API.post("api/execute", { code, language });
   return res.data;
 };
 
 export const submitAssignment = async (code, language, assignmentId) => {
-  const res = await API.post("/submit", { code, language, assignmentId });
+  const res = await API.post("api/submit", { code, language, assignmentId });
   return res.data;
 };
 
 export const fetchSubmissions = async (studentId) => {
-  const res = await API.get(`/submissions/${studentId}`);
+  const res = await API.get(`api/submissions/${studentId}`);
   return res.data;
 };
 

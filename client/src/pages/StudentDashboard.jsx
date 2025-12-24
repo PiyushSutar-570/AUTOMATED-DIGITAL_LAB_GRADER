@@ -1,8 +1,8 @@
-// client/src/pages/StudentDashboard.jsx
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+const url = import.meta.env.VITE_API_URL;
 // Tiny status chip (self-contained)
 function StatusBadge({ status }) {
   const map = {
@@ -24,7 +24,7 @@ export default function StudentDashboard() {
   const [error, setError] = useState("");
 
   // Axios with auth header
-  const api = axios.create({ baseURL: "https://automated-digital-lab-grader.onrender.com" });
+  const api = axios.create({ baseURL: url });
   api.interceptors.request.use((config) => {
     const token = localStorage.getItem("token");
     if (token) config.headers.Authorization = `Bearer ${token}`;
@@ -108,7 +108,7 @@ export default function StudentDashboard() {
                   <td>
                     {a.questionPdfUrl ? (
                       <a
-                        href={`https://automated-digital-lab-grader.onrender.com${a.questionPdfUrl}`}
+                        href={`${url}${a.questionPdfUrl}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-indigo-300 hover:underline"
