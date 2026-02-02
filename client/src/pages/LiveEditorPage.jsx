@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useAssignment } from "../context/AssignmentContext";
-import api from "../utils/api";
+import api from "../utils/api.js";
 import EditorPanel from "../components/EditorPanel";
 import RunOutput from "../components/RunOutput";
 import SubmissionResult from "../components/SubmissionResult";
@@ -48,7 +48,7 @@ export default function LiveEditorPage() {
       if (currentAssignment && currentAssignment._id === assignmentId) return;
 
       try {
-        const { data } = await api.get(`/assignments/get/${assignmentId}`);
+        const { data } = await api.get(`/api/assignments/get/${assignmentId}`);
         const [inputContent, outputContent] = await Promise.all([
           fetchText(data.inputFileUrl),
           fetchText(data.outputFileUrl),
@@ -85,7 +85,7 @@ export default function LiveEditorPage() {
     if (!assignmentId) return setOutput("⚠ No assignment selected.");
     setLoading(true); setResult(null);
     try {
-      const { data } = await api.post("/grade", {
+      const { data } = await api.post("/api/grade", {
         assignmentId,
         code,
         language,

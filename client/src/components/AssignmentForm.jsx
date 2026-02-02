@@ -60,7 +60,6 @@ export default function AssignmentForm() {
         data,
         {
           headers: {
-            "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
           },
         }

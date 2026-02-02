@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { fetchLeaderboard } from "../utils/api";
+import { fetchLeaderboard } from "../utils/api.js";
 
 export default function Leaderboard({ assignmentId }) {
   const [leaders, setLeaders] = useState([]);

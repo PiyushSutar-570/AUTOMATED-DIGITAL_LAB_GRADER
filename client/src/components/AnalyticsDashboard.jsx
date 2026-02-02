@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from "recharts";
-import { fetchAnalytics } from "../utils/api";
+import { fetchAnalytics } from "../utils/api.js";
 
 const emptyTop = [
   { name: "No data", score: 0 },
