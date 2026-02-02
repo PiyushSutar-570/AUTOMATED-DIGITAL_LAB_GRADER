@@ -85,9 +85,15 @@ cd client
 npm install
 npm run dev
 
+#Create a .env file in client/:
+VITE_API_URL = backend_url
+
 #Create a .env file in server/:
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
+PORT = 5000
+NODE_ENV = production
+FRONTEND URL = your_frontend_url
 ```
 
 👤 Author
