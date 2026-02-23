@@ -78,7 +78,7 @@ git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
 #Backend setup
 cd server
 npm install
-npm run dev
+node server.js
 
 #Frontend setup
 cd client
