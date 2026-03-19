@@ -70,6 +70,19 @@ Generates:
 
 🛠 Tech Stack
 
+#Screenshots : 
+
+<img width="1918" height="917" alt="image" src="https://github.com/user-attachments/assets/018542c5-6528-46cc-8a9b-7b2edb743d91" />
+
+<img width="1917" height="922" alt="image" src="https://github.com/user-attachments/assets/a8fe19d3-3924-4b42-8e69-bbd10ce55e4c" />
+
+<img width="1919" height="914" alt="image" src="https://github.com/user-attachments/assets/e7fe343d-77cf-48f6-a1db-d249c4869d56" />
+
+<img width="1889" height="920" alt="image" src="https://github.com/user-attachments/assets/cfc7edda-36df-4ac6-b8c2-1535dfaee1d9" />
+
+<img width="1919" height="923" alt="image" src="https://github.com/user-attachments/assets/d7c7330b-fc3f-498d-8798-d2ffb98ab63f" />
+
+<img width="1905" height="859" alt="image" src="https://github.com/user-attachments/assets/8ca57e90-5ef6-4523-a738-ed4574a2a8b1" />
 
 #Frontend
 
