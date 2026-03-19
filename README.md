@@ -9,6 +9,7 @@ Manual grading of programming labs in large university classes is time-consuming
 Digital TA solves this by acting as an objective, real-time code judge, providing instant evaluation and performance insights for both students and instructors.
 
 🎯 Key Features
+
 👨‍🏫 Instructor Dashboard
 
 1.Create programming assignments with title, deadline, and language support
