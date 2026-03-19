@@ -12,59 +12,88 @@ Digital TA solves this by acting as an objective, real-time code judge, providin
 👨‍🏫 Instructor Dashboard
 
 1.Create programming assignments with title, deadline, and language support
+
 2.Upload:
 📄 Problem statement (PDF)
 📥 Input test cases (input.txt)
 📤 Expected outputs (output.txt)
+
 3.Automatic test-case generation and scoring
+
 4.View class-level analytics and leaderboards
+
 
 🎓 Student Dashboard
 
 1.View active, completed, and closed assignments
+
 2.Access problem PDFs directly
+
 3.Launch assignments in an in-browser live code editor
+
 4.Submit solutions and receive instant, detailed feedback
+
 
 💻 Live Coding Editor
 
 1.Write and test code directly in the browser (Monaco Editor)
+
 2.Supports Python, C++, and JavaScript
+
 3.Run sample inputs before final submission
+
 4.Execute code securely against all test cases
+
 
 🧪 Automated Grading Engine
 
 1.Executes student code using Piston API
+
 2.Compares output against expected results
 
 Generates:
 1.Pass/fail per test case
+
 2.Total score
+
 3.Submission status
 
 📊 Analytics & Leaderboard
 
 1.Assignment-wise performance breakdown
+
 2.Top-scoring students per assignment
+
 3.Average scores and submission trends
+
 4.Motivational leaderboard (optional anonymization)
 
 🛠 Tech Stack
 
+
 #Frontend
+
 1.React.js
+
 2.Monaco Code Editor
+
 3.Tailwind CSS
 
 #Backend
 1.Node.js
+
 2.Express.js
+
 3.MongoDB
+
 4.JWT Authentication
+
 5.Code Execution
+
 6.Piston API (Sandboxed multi-language execution)
+
 7.File Handling
+
 8.Multer (PDF & test case uploads)
 
 #Live preview is here : https://automated-digital-lab-grader-1.onrender.com
