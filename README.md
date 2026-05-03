@@ -2,6 +2,8 @@
 
 A full-stack platform that automates programming lab evaluation with real-time code execution, instant feedback, analytics, and leaderboards.
 
+#Live preview is here : https://automated-digital-lab-grader-1.onrender.com
+
 📌 Problem Statement
 
 Manual grading of programming labs in large university classes is time-consuming, inconsistent, and delays student feedback. Instructors spend more time validating syntax and edge cases than teaching core concepts, while students wait days for results.
@@ -111,8 +113,6 @@ Generates:
 
 8.Multer (PDF & test case uploads)
 
-#Live preview is here : https://automated-digital-lab-grader-1.onrender.com
-
 📦 Installation & Setup
 # Clone the repository
 git clone https://github.com/PiyushSutar-570/AUTOMATED-DIGITAL_LAB_GRADER.git
@@ -130,14 +130,10 @@ npm install
 npm run dev
 
 #Create a .env file in client/:
-VITE_API_URL = backend_url
+add all things given in .env.example
 
 #Create a .env file in server/:
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret_key
-PORT = 5000
-NODE_ENV = production
-FRONTEND URL = your_frontend_url
+add all things given in .env.example
 ```
 
 👤 Author
